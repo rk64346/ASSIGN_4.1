@@ -1,0 +1,410 @@
+{
+ "cells": [
+  {
+   "cell_type": "raw",
+   "id": "0510c548-727c-484d-b4b8-84bfd664f1ec",
+   "metadata": {},
+   "source": [
+    "## Q-1 craeate a vehical class with an init method having instance variable as name_of_vehical,max_speed and avgrage_of_vehical."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "b2ce7f62-141e-4971-bea0-a2ef676ac8e7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class vehical:\n",
+    "    def __init__(self,name ,maxspeed,average):\n",
+    "        self.name = name # instance variable\n",
+    "        self.maxspeed = maxspeed\n",
+    "        self.aveage = average\n",
+    "    def averagespeed(self):\n",
+    "        print(\"this car have avearge milege of 10kms\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "8473861c-ab84-4f43-970f-983d4a6e543b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class vehical:\n",
+    "    def __init__(self,name ,maxspeed,average):\n",
+    "        self.name = name # instance variable\n",
+    "        self.maxspeed = maxspeed\n",
+    "        self.aveage = average\n",
+    "    def averagespeed(self):\n",
+    "        print(\"this car have avearge milege of 10kms\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "4be64386-2350-4670-895b-e8ea296eb7ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "varna = vehical('verna',200,10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "50eadd0b-f3b1-42f8-a8d7-171a7db7c3fd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "this car have avearge milege of 10kms\n"
+     ]
+    }
+   ],
+   "source": [
+    "varna.averagespeed()"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "e418be31-4e93-4d51-b4f5-adbffe0a33bc",
+   "metadata": {},
+   "source": [
+    "## Create a child class car from the vehical class createdin que 1, which will inherit the vehicalclass.create a method named seating_capacity which takes capasity as an argument and return the name of the vehical and its seating capicity."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "93c0f922-066f-4398-8736-f24eb10a9556",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Vehical:\n",
+    "    def __init__(self,name ,maxspeed,average,maxmember):\n",
+    "        self._name = name # instance variable\n",
+    "        self._maxspeed = maxspeed\n",
+    "        self._aveage = average\n",
+    "        self._maxmember = maxmember\n",
+    "        self._seating_capacity = []\n",
+    "    def averagespeed(self):\n",
+    "        print(\"this car have avearge milege of 10kms\")\n",
+    "class Child(Vehical):\n",
+    "    def addmember(self,name):\n",
+    "        if len(self._seating_capacity) <  self._maxmember:\n",
+    "            self._seating_capacity.append(name)\n",
+    "            print(f'{name} added as member.')\n",
+    "        else:\n",
+    "                  print('cannot add more , max capacity have reached')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "f3db1a0b-f874-4f5d-a9e0-bdac917e7522",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_vehical =  Child('verna',200,10,4,)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "1bd7e099-4356-4a28-9f63-acb4e92ba96e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "this car have avearge milege of 10kms\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_vehical.averagespeed()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "82f99042-7d03-49fe-ab61-de024bceccb1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "rohit added as member.\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_vehical.addmember(\"rohit\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "6ea8b826-f448-4ee9-9635-7cda8f135a36",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pagla added as member.\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_vehical.addmember(\"pagla\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "096933c2-cb15-4b21-9902-07c3d8f245a6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "ghonchu added as member.\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_vehical.addmember(\"ghonchu\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "65287ae6-6990-4ec3-9ff3-9a25e8e0c67e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "wella insan added as member.\n"
+     ]
+    }
+   ],
+   "source": [
+    "my_vehical.addmember(\"wella insan\")"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "0377cc1a-7fd8-4a64-91b9-1164e0e11564",
+   "metadata": {},
+   "source": [
+    "Q3- what is multiple inheritance? write a python code to demonstrate multiple inheritance."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "9591cfa1-f7bf-446f-ad2e-6c0bfd13a1b1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "chutki sab thk hai\n",
+      "gowmata mera code padh rahe ho to bhagwan apko khush rakhey\n",
+      "gowmata kya haal hai boss\n"
+     ]
+    }
+   ],
+   "source": [
+    "class janwar:\n",
+    "    def __init__(self,name):\n",
+    "        self.name = name\n",
+    "        \n",
+    "    def sound(self):\n",
+    "        print(self.name,\"kya haal hai boss\")\n",
+    "\n",
+    "class bird(janwar):\n",
+    "    def __init__(self,name):\n",
+    "        super().__init__(name)\n",
+    "        self.name = name\n",
+    "    \n",
+    "    def sound(self):\n",
+    "        print(self.name,\"sab thk hai\")\n",
+    "        \n",
+    "class cow(janwar):\n",
+    "    def __init__(self):\n",
+    "        super().__init__(\"gowmata\")\n",
+    "        print(self.name,\"mera code padh rahe ho to bhagwan apko khush rakhey\")\n",
+    "        \n",
+    "bird_instance = bird(\"chutki\")\n",
+    "bird_instance.sound()\n",
+    "\n",
+    "cow_instance = cow()\n",
+    "cow_instance.sound()\n",
+    "\n",
+    "\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "13801ce9-090c-46bb-9627-afe38190fbb0",
+   "metadata": {},
+   "source": [
+    "Q4- what are getter and setter in python? create a class and create getter amd a setter method in this class."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "04af0c58-47b1-4190-b14a-f2645e31677c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "rohit\n",
+      "None\n"
+     ]
+    }
+   ],
+   "source": [
+    "class Insaan:\n",
+    "    def __init__(self,name):\n",
+    "        self.name = name\n",
+    "        \n",
+    "    def get_name(self):\n",
+    "        return self.name\n",
+    "    \n",
+    "    def set_name(self,new_name):\n",
+    "        self.name = new_name\n",
+    "        \n",
+    "person = Insaan(\"rohit\")\n",
+    "print(person.get_name())\n",
+    "person.set_name(\"golu\")\n",
+    "print(person.set_name(\"golu\"))\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "1a221c65-e743-4b48-a892-75d6964e870c",
+   "metadata": {},
+   "source": [
+    "Q5- what is method overriding in python?write a python code to demonstrate method overriding."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "c063c68a-70af-4708-8acd-93ba4d4b88ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Animal:\n",
+    "    def sound(self):\n",
+    "        print(\"animal sound nikalta hai\")\n",
+    "class Crow( Animal):\n",
+    "    def sound(self):\n",
+    "        print(\"kow kow\")\n",
+    "        \n",
+    "class Bird(Animal):\n",
+    "    def sound(self):\n",
+    "        print(\"chi chi\")\n",
+    "        \n",
+    "animal = Animal()\n",
+    "crow = Crow()\n",
+    "bird = Bird()\n",
+    "\n",
+    "animal.sound()\n",
+    "crow.sound()\n",
+    "\n",
+    "\n",
+    "        \n",
+    "\n",
+    "              \n",
+    "            "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "6716f879-bd40-444d-9020-cd3cbf9f36c4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "animal sound nikalta hai\n"
+     ]
+    }
+   ],
+   "source": [
+    "animal.sound()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "fd8c7a23-1501-4952-b476-50abc8096153",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "Crow.sound() missing 1 required positional argument: 'self'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[8], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m \u001b[43mCrow\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43msound\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n",
+      "\u001b[0;31mTypeError\u001b[0m: Crow.sound() missing 1 required positional argument: 'self'"
+     ]
+    }
+   ],
+   "source": [
+    "Crow.sound()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "385937c5-8ab5-4b43-b36d-0b62b6c40c75",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
